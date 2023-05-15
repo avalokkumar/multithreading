@@ -67,6 +67,23 @@ access data. Each thread can have its own instance of a variable, ensuring threa
 
 * ThreadLocal class: In Java, the ThreadLocal class is provided to implement thread-local storage. It provides methods to set and get values specific to each thread. The ThreadLocal instance is typically declared as static and shared across multiple threads.
 
+
+##### Use cases:
+* Context Propagation: TLS is useful for propagating context information within a specific thread. For example, in a 
+web application, the current user's information (such as user ID or session data) can be stored in thread-local variables, ensuring that the correct user information is accessible within the scope of each request.
+
+* Performance Optimization: TLS can be used to cache thread-specific data, avoiding the need for synchronization and improving performance. For example, in a multi-threaded application where each thread requires access to a shared resource, rather than repeatedly acquiring and releasing the resource, a thread-local variable can be used to store a local copy of the resource for each thread, reducing contention and improving performance.
+
+* Logging and Diagnostic Information: TLS is often used in logging and diagnostic frameworks to associate contextual information with log messages or diagnostic traces. Each thread can have its own thread-local variable to store contextual data, such as request ID, thread ID, or transaction ID, which can be included in log entries or diagnostic traces for better analysis and debugging.
+
+* Connection and Transaction Management: In multi-threaded applications that require database connections or transaction management, TLS can be used to associate a database connection or transaction with each thread. This ensures that each thread operates with its own connection or transaction, preventing interference and providing isolation.
+
+* Thread-Specific Configuration: TLS can be used to store thread-specific configuration settings. This allows different threads to have their own configuration values without affecting the behavior of other threads. This is particularly useful in scenarios where thread behavior needs to be customized or parameterized.
+
+* Thread-local Randomness: In scenarios where thread-local random numbers are required, TLS can be used to allocate a separate random number generator for each thread. This ensures that each thread has its own independent sequence of random numbers, avoiding contention and ensuring reproducibility within each thread.
+
+
+
 ##### Benefits of Thread-Local Storage:
 
 * Thread Safety: Thread-local storage ensures that data accessed through thread-local variables is safe from concurrent modifications by other threads. Each thread operates on its own copy of the data.
