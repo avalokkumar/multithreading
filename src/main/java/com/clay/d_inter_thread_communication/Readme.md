@@ -75,3 +75,36 @@ multiple threads.
 * They allow multiple conditions to be associated with a single lock, enabling finer-grained synchronization based on different criteria.
 * Locks and conditions can be used to build more complex synchronization patterns and algorithms.
 * They offer features like fairness, try-lock, and timed wait, which are not available with the intrinsic lock.
+
+
+In multithreading and inter-service communication, there are several types of locks available, each designed to fulfill specific requirements.
+Let's explore some of the common types:
+
+* ##### ReentrantLock:
+* - ReentrantLock is an implementation of the Lock interface that allows reentrant locking.
+* - It supports the ability for a thread to acquire the lock multiple times without getting deadlocked.
+* - ReentrantLock provides more control over lock acquisition and release compared to the intrinsic lock (monitor lock) used with the synchronized keyword.
+* - It offers additional features such as fairness, tryLock, and timed lock acquisition.
+* - ReentrantLock is often used as a replacement for synchronized blocks or methods when more advanced locking behavior is required.
+
+* ##### ReadWriteLock:
+* - ReadWriteLock provides a mechanism to allow multiple threads to concurrently read a shared resource, while exclusive write access is granted to only one thread at a time.
+* - It consists of two locks: a read lock and a write lock.
+* - Multiple threads can acquire the read lock simultaneously if no write operation is in progress.
+* - Only one thread can acquire the write lock, and it will block any concurrent read or write attempts.
+* - ReadWriteLock is useful when the shared resource is read frequently but written infrequently.
+
+* ##### StampedLock:
+
+* - StampedLock is an advanced lock introduced in Java 8 that supports optimistic read locking along with exclusive write locking.
+* - It provides three modes: read, write, and optimistic read.
+* - Multiple threads can concurrently acquire the optimistic read lock without blocking, assuming there is no exclusive write lock held.
+* - StampedLock also supports upgrading an optimistic read lock to a write lock if necessary.
+* - It offers better performance for read-heavy workloads compared to ReadWriteLock but may have higher overhead for write operations.
+
+* ##### ReentrantReadWriteLock:
+
+* - ReentrantReadWriteLock is another implementation of the ReadWriteLock interface.
+* - It provides similar functionality to ReadWriteLock but allows reentrant locking.
+* - ReentrantReadWriteLock allows a thread holding the read lock to acquire it multiple times without being blocked.
+* - However, a thread holding the write lock is still exclusive and will block other threads from acquiring both read and write locks.
