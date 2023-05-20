@@ -1,30 +1,30 @@
-## Introduction to Threads:
+## [Introduction to Threads](src/main/java/com/clay/a_intro):
 
 * What is a thread?
 * Differences between threads and processes.
 * Benefits of using threads.
 
-## Thread Basics:
+## [Thread Basics](src/main/java/com/clay/b_thread_basics):
 
 * Creating and starting threads.
 * Synchronization and coordination between threads.
 * Thread states: new, runnable, blocked, terminated.
 * Thread priorities and scheduling.
 
-## Thread Safety and Synchronization:
+## [Thread Safety and Synchronization](src/main/java/com/clay/c_thread_safety_synchronization):
 
 * Shared resources and race conditions.
 * Critical sections and mutual exclusion.
 * Synchronized blocks and methods.
 * Volatile variables.
 
-## Inter-Thread Communication:
+## [Inter-Thread Communication](src/main/java/com/clay/d_inter_thread_communication):
 
 * Communication between threads using wait() and notify().
 * Producer-consumer problem and solutions.
 * Blocking queues and condition variables.
 
-## Thread Coordination:
+## [Thread Coordination](src/main/java/com/clay/e_thread_coordination):
 
 * Joining threads.
 * Thread interrupts and interruption handling.
