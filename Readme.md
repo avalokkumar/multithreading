@@ -30,7 +30,7 @@
 * Thread interrupts and interruption handling.
 * Thread timeouts and timed waiting.
 
-## Thread Pools:
+## [Thread Pools](src/main/java/com/clay/f_thread_pools):
 
 * Introduction to thread pools.
 * Executor framework in Java.
