@@ -37,7 +37,7 @@
 * Creating and managing thread pools.
 * Benefits and drawbacks of thread pools.
 
-## Parallel Processing and Parallelism:
+## [Parallel Processing and Parallelism](src/main/java/com/clay/g_parallel_processing_parallelism):
 
 * Parallel programming concepts.
 * Data parallelism vs. task parallelism.
