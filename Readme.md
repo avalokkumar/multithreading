@@ -44,7 +44,7 @@
 * Parallel algorithms and data structures.
 * Fork-Join framework in Java.
 
-## Thread Safety Mechanisms:
+## [Thread Safety Mechanisms](src/main/java/com/clay/h_thread_safety_mechanisms):
 
 * Locks and mutexes.
 * Semaphores and barriers.
