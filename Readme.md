@@ -51,7 +51,7 @@
 * Atomic variables.
 * Read-write locks.
 
-## Thread-Local Storage:
+## [Thread-Local Storage](src/main/java/com/clay/i_thread_local_storage):
 
 * Thread-local variables.
 * Inheritable thread-local variables.
