@@ -1,57 +1,57 @@
-## Introduction to Threads:
+## [Introduction to Threads](src/main/java/com/clay/a_intro):
 
 * What is a thread?
 * Differences between threads and processes.
 * Benefits of using threads.
 
-## Thread Basics:
+## [Thread Basics](src/main/java/com/clay/b_thread_basics):
 
 * Creating and starting threads.
 * Synchronization and coordination between threads.
 * Thread states: new, runnable, blocked, terminated.
 * Thread priorities and scheduling.
 
-## Thread Safety and Synchronization:
+## [Thread Safety and Synchronization](src/main/java/com/clay/c_thread_safety_synchronization):
 
 * Shared resources and race conditions.
 * Critical sections and mutual exclusion.
 * Synchronized blocks and methods.
 * Volatile variables.
 
-## Inter-Thread Communication:
+## [Inter-Thread Communication](src/main/java/com/clay/d_inter_thread_communication):
 
 * Communication between threads using wait() and notify().
 * Producer-consumer problem and solutions.
 * Blocking queues and condition variables.
 
-## Thread Coordination:
+## [Thread Coordination](src/main/java/com/clay/e_thread_coordination):
 
 * Joining threads.
 * Thread interrupts and interruption handling.
 * Thread timeouts and timed waiting.
 
-## Thread Pools:
+## [Thread Pools](src/main/java/com/clay/f_thread_pools):
 
 * Introduction to thread pools.
 * Executor framework in Java.
 * Creating and managing thread pools.
 * Benefits and drawbacks of thread pools.
 
-## Parallel Processing and Parallelism:
+## [Parallel Processing and Parallelism](src/main/java/com/clay/g_parallel_processing_parallelism):
 
 * Parallel programming concepts.
 * Data parallelism vs. task parallelism.
 * Parallel algorithms and data structures.
 * Fork-Join framework in Java.
 
-## Thread Safety Mechanisms:
+## [Thread Safety Mechanisms](src/main/java/com/clay/h_thread_safety_mechanisms):
 
 * Locks and mutexes.
 * Semaphores and barriers.
 * Atomic variables.
 * Read-write locks.
 
-## Thread-Local Storage:
+## [Thread-Local Storage](src/main/java/com/clay/i_thread_local_storage):
 
 * Thread-local variables.
 * Inheritable thread-local variables.
