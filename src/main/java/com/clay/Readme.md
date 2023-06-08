@@ -1,76 +1,67 @@
-## [Introduction to Threads](src/main/java/com/clay/a_intro):
+## Thread Starvation:
 
-* What is a thread?
-* Differences between threads and processes.
-* Benefits of using threads.
+Thread starvation occurs when a thread is unable to make progress or complete its task due to a lack of available resources or scheduling issues. 
+It can lead to performance degradation and the overall responsiveness of an application. 
 
-## [Thread Basics](src/main/java/com/clay/b_thread_basics):
+### Here are some common scenarios that can cause thread starvation:
 
-* Creating and starting threads.
-* Synchronization and coordination between threads.
-* Thread states: new, runnable, blocked, terminated.
-* Thread priorities and scheduling.
+1. #### Resource Starvation: 
+If a thread requires exclusive access to a shared resource, but other threads are holding the resource for extended periods, the waiting thread may starve. For example, if multiple threads are competing for a lock, and one thread continuously acquires and holds the lock for a long time, other threads waiting for the lock may starve.
 
-## [Thread Safety and Synchronization](src/main/java/com/clay/c_thread_safety_synchronization):
+2. #### Priority Inversion: 
+In a scenario where multiple threads with different priorities are contending for resources, priority inversion can occur. Priority inversion happens when a lower-priority thread holds a resource needed by a higher-priority thread. This can cause the higher-priority thread to wait indefinitely, leading to thread starvation.
 
-* Shared resources and race conditions.
-* Critical sections and mutual exclusion.
-* Synchronized blocks and methods.
-* Volatile variables.
+3. #### Scheduling Issues: 
+In some cases, the thread scheduler may not allocate sufficient CPU time to a particular thread due to scheduling algorithms or system load. This can cause the thread to make slow progress or appear starved.
 
-## [Inter-Thread Communication](src/main/java/com/clay/d_inter_thread_communication):
+### To mitigate thread starvation, consider the following approaches:
 
-* Communication between threads using wait() and notify().
-* Producer-consumer problem and solutions.
-* Blocking queues and condition variables.
+1. #### Ensure fair resource allocation: 
+Use fair locking mechanisms that ensure threads waiting for a resource are given an opportunity to acquire it, preventing indefinite starvation.
 
-## [Thread Coordination](src/main/java/com/clay/e_thread_coordination):
+2. #### Use thread pooling: 
+Employ thread pools and appropriate thread pool configurations to limit the number of concurrent threads and manage resource consumption effectively.
 
-* Joining threads.
-* Thread interrupts and interruption handling.
-* Thread timeouts and timed waiting.
+3. #### Optimize resource usage: 
+Identify and optimize resource-intensive operations to minimize the time threads spend waiting for resources.
 
-## [Thread Pools](src/main/java/com/clay/f_thread_pools):
+4. #### Review scheduling policies: 
+Understand the thread scheduling policies of the underlying platform and consider adjusting thread priorities or scheduling parameters if necessary.
 
-* Introduction to thread pools.
-* Executor framework in Java.
-* Creating and managing thread pools.
-* Benefits and drawbacks of thread pools.
+## Deadlock:
+Deadlock is a situation in which two or more threads are blocked forever, waiting for each other to release resources that they hold. 
 
-## [Parallel Processing and Parallelism](src/main/java/com/clay/g_parallel_processing_parallelism):
+### It occurs when the following four conditions are met:
 
-* Parallel programming concepts.
-* Data parallelism vs. task parallelism.
-* Parallel algorithms and data structures.
-* Fork-Join framework in Java.
+1. #### Mutual Exclusion: 
+At least one resource must be held in a non-sharable mode, meaning it cannot be simultaneously used or accessed by multiple threads.
 
-## [Thread Safety Mechanisms](src/main/java/com/clay/h_thread_safety_mechanisms):
+2. #### Hold and Wait: 
+A thread holding at least one resource is waiting to acquire additional resources held by other threads.
 
-* Locks and mutexes.
-* Semaphores and barriers.
-* Atomic variables.
-* Read-write locks.
+3. #### No Preemption: 
+Resources cannot be forcibly taken away from threads; they must be released voluntarily.
 
-## [Thread-Local Storage](src/main/java/com/clay/i_thread_local_storage):
+4. #### Circular Wait: 
+There exists a circular chain of two or more threads, each holding a resource that is requested by the next thread in the chain.
+When a deadlock occurs, the threads involved will be stuck indefinitely, unable to make any progress. Deadlocks are often subtle and hard to detect, leading to application hangs or freezes.
 
-* Thread-local variables.
-* Inheritable thread-local variables.
-* Use cases and benefits of thread-local storage.
+### To prevent and resolve deadlocks, consider the following strategies:
 
-## Advanced Concepts and Techniques:
+1. #### Resource Ordering: 
+Establish a consistent order in which resources are acquired to prevent circular wait conditions. Threads should always request resources in the same order to avoid deadlock.
 
-* Thread starvation and deadlock.
-* Thread contention and scalability.
-* Thread profiling and debugging.
-* Advanced synchronization primitives (e.g., CountDownLatch, CyclicBarrier).
+2. #### Resource Allocation Strategies: 
+Utilize techniques such as resource allocation graphs, bankers' algorithm, or deadlock detection algorithms to manage resource allocation and avoid potential deadlocks.
 
-## Concurrent Collections:
+3. #### Avoid Hold and Wait: 
+Implement strategies to ensure that a thread requests all the required resources upfront before execution, rather than holding some resources and then waiting for others.
 
-* Thread-safe collections (e.g., ConcurrentHashMap, CopyOnWriteArrayList).
-* Concurrent data structures (e.g., BlockingQueue, ConcurrentLinkedQueue).
+4. #### Timeouts and Deadlock Detection: 
+Set timeouts for resource acquisition, so if a thread is unable to acquire a resource within a specified time, it can release its held resources and retry or take alternative actions. Deadlock detection algorithms can also periodically check for deadlock conditions and take appropriate actions.
 
-## Advanced Multithreading Concepts:
+5. #### Thread Interruption: 
+Use thread interruption mechanisms to break out of potential deadlock situations and handle them gracefully.
 
-* Asynchronous programming and futures.
-* Reactive programming and event-driven architectures.
-* Actor-based concurrency models (e.g., Akka framework).
+6. #### Design Considerations: 
+Review and analyze the system design to identify potential deadlock-prone scenarios. Ensure that proper synchronization techniques and resource management practices are followed.
