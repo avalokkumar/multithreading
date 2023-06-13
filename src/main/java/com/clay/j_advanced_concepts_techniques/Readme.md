@@ -129,7 +129,7 @@ Utilize techniques such as resource allocation graphs, bankers' algorithm, or de
 
 3. #### Avoid Hold and Wait: 
 Implement strategies to ensure that a thread requests all the required resources upfront before execution, rather than holding some resources and then waiting for others.
-    ````
+
 4. #### Timeouts and Deadlock Detection: 
 Set timeouts for resource acquisition, so if a thread is unable to acquire a resource within a specified time, it can release its held resources and retry or take alternative actions. Deadlock detection algorithms can also periodically check for deadlock conditions and take appropriate actions.
 
