@@ -57,7 +57,7 @@
 * Inheritable thread-local variables.
 * Use cases and benefits of thread-local storage.
 
-## Advanced Concepts and Techniques:
+## [Advanced Concepts and Techniques](src/main/java/com/clay/j_advanced_concepts_techniques):
 
 * Thread starvation and deadlock.
 * Thread contention and scalability.
