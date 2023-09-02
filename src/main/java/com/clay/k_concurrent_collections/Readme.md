@@ -13,6 +13,8 @@ A highly efficient thread-safe implementation of the Map interface designed for 
 * Allows multiple threads to read simultaneously without locking the entire map.
 * Suitable for scenarios with high contention for shared resources.
 
+---
+
 #### 2. CopyOnWriteArrayList
 A thread-safe variant of ArrayList in which all mutative operations (e.g., add, set, remove) are implemented by making a fresh copy of the underlying array. This implementation is well-suited for scenarios where traversal operations vastly outnumber mutations.
 
@@ -35,6 +37,8 @@ A thread-safe variant of ArrayList in which all mutative operations (e.g., add, 
 * Use Cases: CopyOnWriteArrayList is often used in scenarios where read-heavy workloads are prevalent, and data consistency is critical. Examples include maintaining lists of subscribers or listeners in event-driven systems.
 
 * Considerations: While CopyOnWriteArrayList is effective for specific use cases, its performance characteristics make it less suitable for scenarios with frequent write operations or large collections, where the overhead of copying the entire array can become prohibitive.
+
+---
 
 #### 3. CopyOnWriteArraySet
 CopyOnWriteArraySet is a thread-safe variant of Set in which all mutative operations (e.g., add, set, remove) are implemented by making a fresh copy of the underlying array. This implementation is well-suited for scenarios where traversal operations vastly outnumber mutations.
@@ -61,6 +65,8 @@ CopyOnWriteArraySet is a thread-safe variant of Set in which all mutative operat
 
 * Considerations: While CopyOnWriteArraySet is effective for specific use cases, its performance characteristics make it less suitable for scenarios with frequent write operations or large sets, where the overhead of copying the entire array can become prohibitive.
 
+---
+
 #### 4. ConcurrentSkipListMap
 `ConcurrentSkipListMap` is a thread-safe and concurrent implementation of the NavigableMap interface provided by Java's `java.util.concurrent` package. It is based on a skip list data structure.
 
@@ -84,6 +90,8 @@ CopyOnWriteArraySet is a thread-safe variant of Set in which all mutative operat
 * Use Cases: ConcurrentSkipListMap is suitable for scenarios where you need a thread-safe and sorted map with efficient read and write operations. It is often used in applications where data needs to be maintained in a specific order, such as maintaining leaderboard scores, caching, or indexing.
 
 * Considerations: While ConcurrentSkipListMap provides excellent concurrency and sorting capabilities, it may have slightly higher overhead compared to simpler map implementations, especially in scenarios with low contention and small datasets. It is most beneficial in applications with significant concurrent access requirements and large datasets.
+
+---
 
 #### 5. ConcurrentSkipListSet
 #### 6. BlockingQueue (including implementations like LinkedBlockingQueue and ArrayBlockingQueue)
