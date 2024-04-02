@@ -64,7 +64,7 @@
 * Thread profiling and debugging.
 * Advanced synchronization primitives (e.g., CountDownLatch, CyclicBarrier).
 
-## Concurrent Collections:
+## [Concurrent Collections](src/main/java/com/clay/k_concurrent_collections):
 
 * Thread-safe collections (e.g., ConcurrentHashMap, CopyOnWriteArrayList).
 * Concurrent data structures (e.g., BlockingQueue, ConcurrentLinkedQueue).
