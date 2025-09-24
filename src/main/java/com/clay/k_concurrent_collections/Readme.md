@@ -85,7 +85,6 @@ CopyOnWriteArraySet is a thread-safe variant of Set in which all mutative operat
 
 * Considerations: While ConcurrentSkipListMap provides excellent concurrency and sorting capabilities, it may have slightly higher overhead compared to simpler map implementations, especially in scenarios with low contention and small datasets. It is most beneficial in applications with significant concurrent access requirements and large datasets.
 
-Certainly! Let's go through each of the thread-safe collections mentioned and provide detailed explanations along with their key features:
 
 #### 5. ConcurrentSkipListSet:
 
